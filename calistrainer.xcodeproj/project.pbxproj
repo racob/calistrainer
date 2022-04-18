@@ -16,6 +16,23 @@
 		F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7627E07CB100B5FA0B /* PracticeItem.swift */; };
 		F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7927E0829600B5FA0B /* MainTabView.swift */; };
 		F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7945A7C27E083BB00B5FA0B /* Icon.xcassets */; };
+		F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */; };
+		F7A942AB280D2014008D2EEF /* ExerciseStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942AA280D2014008D2EEF /* ExerciseStage.swift */; };
+		F7A942AD280D2053008D2EEF /* SquatsTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942AC280D2053008D2EEF /* SquatsTrackable.swift */; };
+		F7A942B0280D2094008D2EEF /* PracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942AF280D2094008D2EEF /* PracticeViewModel.swift */; };
+		F7A942B3280D20F9008D2EEF /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942B2280D20F9008D2EEF /* AudioManager.swift */; };
+		F7A942B5280D2116008D2EEF /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942B4280D2116008D2EEF /* SpeechSynthesizer.swift */; };
+		F7A942B7280D218E008D2EEF /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942B6280D218E008D2EEF /* PracticeView.swift */; };
+		F7A942BA280D2217008D2EEF /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942B9280D2217008D2EEF /* CameraView.swift */; };
+		F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942BB280D2224008D2EEF /* CameraViewController.swift */; };
+		F7A942BE280D2231008D2EEF /* CameraViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942BD280D2231008D2EEF /* CameraViewWrapper.swift */; };
+		F7C56B61280D1E70007B66BB /* bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7C56B5D280D1E70007B66BB /* bell.wav */; };
+		F7C56B62280D1E70007B66BB /* fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7C56B5E280D1E70007B66BB /* fail.wav */; };
+		F7C56B63280D1E70007B66BB /* buildup.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7C56B5F280D1E70007B66BB /* buildup.wav */; };
+		F7C56B64280D1E70007B66BB /* slap.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7C56B60280D1E70007B66BB /* slap.wav */; };
+		F7C56B67280D1EAC007B66BB /* CGPoint+Computation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C56B66280D1EAC007B66BB /* CGPoint+Computation.swift */; };
+		F7C56B69280D1EE3007B66BB /* StickFigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C56B68280D1EE3007B66BB /* StickFigureView.swift */; };
+		F7C56B6C280D1F18007B66BB /* Stick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C56B6B280D1F18007B66BB /* Stick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +46,23 @@
 		F7945A7627E07CB100B5FA0B /* PracticeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeItem.swift; sourceTree = "<group>"; };
 		F7945A7927E0829600B5FA0B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F7945A7C27E083BB00B5FA0B /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTrackable.swift; sourceTree = "<group>"; };
+		F7A942AA280D2014008D2EEF /* ExerciseStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStage.swift; sourceTree = "<group>"; };
+		F7A942AC280D2053008D2EEF /* SquatsTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatsTrackable.swift; sourceTree = "<group>"; };
+		F7A942AF280D2094008D2EEF /* PracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewModel.swift; sourceTree = "<group>"; };
+		F7A942B2280D20F9008D2EEF /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		F7A942B4280D2116008D2EEF /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		F7A942B6280D218E008D2EEF /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		F7A942B9280D2217008D2EEF /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		F7A942BB280D2224008D2EEF /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F7A942BD280D2231008D2EEF /* CameraViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewWrapper.swift; sourceTree = "<group>"; };
+		F7C56B5D280D1E70007B66BB /* bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bell.wav; sourceTree = "<group>"; };
+		F7C56B5E280D1E70007B66BB /* fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fail.wav; sourceTree = "<group>"; };
+		F7C56B5F280D1E70007B66BB /* buildup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buildup.wav; sourceTree = "<group>"; };
+		F7C56B60280D1E70007B66BB /* slap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slap.wav; sourceTree = "<group>"; };
+		F7C56B66280D1EAC007B66BB /* CGPoint+Computation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Computation.swift"; sourceTree = "<group>"; };
+		F7C56B68280D1EE3007B66BB /* StickFigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickFigureView.swift; sourceTree = "<group>"; };
+		F7C56B6B280D1F18007B66BB /* Stick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stick.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +97,7 @@
 			children = (
 				F7945A7827E0828700B5FA0B /* TabBar */,
 				F7945A6C27E0734E00B5FA0B /* Common */,
+				F7A942AE280D205C008D2EEF /* Practice */,
 				F7945A6727E03A0A00B5FA0B /* Home */,
 				F749E06D27DF732400AD7A11 /* calistrainerApp.swift */,
 				F7945A7127E075EA00B5FA0B /* Supporting Files */,
@@ -90,6 +125,9 @@
 		F7945A6C27E0734E00B5FA0B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F7A942B1280D20D0008D2EEF /* Audio */,
+				F7A942A6280D1FB1008D2EEF /* Data */,
+				F7C56B65280D1E82007B66BB /* Extension */,
 				F7945A6D27E0739300B5FA0B /* UI */,
 			);
 			path = Common;
@@ -98,6 +136,8 @@
 		F7945A6D27E0739300B5FA0B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F7A942B8280D2205008D2EEF /* UIKit */,
+				F7C56B6A280D1F03007B66BB /* Shape */,
 				F7945A7527E07C8400B5FA0B /* View */,
 				F7945A6E27E073BC00B5FA0B /* Button */,
 			);
@@ -115,6 +155,7 @@
 		F7945A7127E075EA00B5FA0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F7C56B5C280D1E70007B66BB /* Sound */,
 				F7945A7227E0767700B5FA0B /* Assets */,
 			);
 			path = "Supporting Files";
@@ -134,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F7945A7627E07CB100B5FA0B /* PracticeItem.swift */,
+				F7C56B68280D1EE3007B66BB /* StickFigureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,6 +186,95 @@
 				F7945A7927E0829600B5FA0B /* MainTabView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F7A942A6280D1FB1008D2EEF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942A7280D1FB5008D2EEF /* Reusable */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F7A942A7280D1FB5008D2EEF /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */,
+				F7A942AA280D2014008D2EEF /* ExerciseStage.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		F7A942AE280D205C008D2EEF /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942B6280D218E008D2EEF /* PracticeView.swift */,
+				F7A942AF280D2094008D2EEF /* PracticeViewModel.swift */,
+				F7C56B6D280D1F37007B66BB /* Squat */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		F7A942B1280D20D0008D2EEF /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942B2280D20F9008D2EEF /* AudioManager.swift */,
+				F7A942B4280D2116008D2EEF /* SpeechSynthesizer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		F7A942B8280D2205008D2EEF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942BF280D2233008D2EEF /* Camera */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F7A942BF280D2233008D2EEF /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942B9280D2217008D2EEF /* CameraView.swift */,
+				F7A942BB280D2224008D2EEF /* CameraViewController.swift */,
+				F7A942BD280D2231008D2EEF /* CameraViewWrapper.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		F7C56B5C280D1E70007B66BB /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F7C56B5D280D1E70007B66BB /* bell.wav */,
+				F7C56B5E280D1E70007B66BB /* fail.wav */,
+				F7C56B5F280D1E70007B66BB /* buildup.wav */,
+				F7C56B60280D1E70007B66BB /* slap.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		F7C56B65280D1E82007B66BB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F7C56B66280D1EAC007B66BB /* CGPoint+Computation.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F7C56B6A280D1F03007B66BB /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				F7C56B6B280D1F18007B66BB /* Stick.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		F7C56B6D280D1F37007B66BB /* Squat */ = {
+			isa = PBXGroup;
+			children = (
+				F7A942AC280D2053008D2EEF /* SquatsTrackable.swift */,
+			);
+			path = Squat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +335,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C56B63280D1E70007B66BB /* buildup.wav in Resources */,
+				F7C56B62280D1E70007B66BB /* fail.wav in Resources */,
+				F7C56B61280D1E70007B66BB /* bell.wav in Resources */,
 				F749E07527DF732500AD7A11 /* Preview Assets.xcassets in Resources */,
+				F7C56B64280D1E70007B66BB /* slap.wav in Resources */,
 				F749E07227DF732500AD7A11 /* Image.xcassets in Resources */,
 				F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */,
 				F7945A7427E076A000B5FA0B /* Color.xcassets in Resources */,
@@ -218,11 +353,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A942AD280D2053008D2EEF /* SquatsTrackable.swift in Sources */,
+				F7A942B7280D218E008D2EEF /* PracticeView.swift in Sources */,
+				F7A942B0280D2094008D2EEF /* PracticeViewModel.swift in Sources */,
+				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
 				F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */,
 				F749E07027DF732400AD7A11 /* HomeView.swift in Sources */,
+				F7C56B69280D1EE3007B66BB /* StickFigureView.swift in Sources */,
 				F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */,
+				F7A942AB280D2014008D2EEF /* ExerciseStage.swift in Sources */,
+				F7C56B6C280D1F18007B66BB /* Stick.swift in Sources */,
 				F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */,
+				F7A942BE280D2231008D2EEF /* CameraViewWrapper.swift in Sources */,
+				F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */,
+				F7C56B67280D1EAC007B66BB /* CGPoint+Computation.swift in Sources */,
 				F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */,
+				F7A942B5280D2116008D2EEF /* SpeechSynthesizer.swift in Sources */,
+				F7A942B3280D20F9008D2EEF /* AudioManager.swift in Sources */,
+				F7A942BA280D2217008D2EEF /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +504,7 @@
 				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For human body tracking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -385,6 +534,7 @@
 				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For human body tracking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
