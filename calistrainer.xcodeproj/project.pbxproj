@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06D27DF732400AD7A11 /* calistrainerApp.swift */; };
-		F749E07027DF732400AD7A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06F27DF732400AD7A11 /* ContentView.swift */; };
-		F749E07227DF732500AD7A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07127DF732500AD7A11 /* Assets.xcassets */; };
+		F749E07027DF732400AD7A11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06F27DF732400AD7A11 /* HomeView.swift */; };
+		F749E07227DF732500AD7A11 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07127DF732500AD7A11 /* Image.xcassets */; };
 		F749E07527DF732500AD7A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07427DF732500AD7A11 /* Preview Assets.xcassets */; };
+		F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A6F27E073D800B5FA0B /* PrimaryButton.swift */; };
+		F7945A7427E076A000B5FA0B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7945A7327E076A000B5FA0B /* Color.xcassets */; };
+		F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7627E07CB100B5FA0B /* PracticeItem.swift */; };
+		F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7927E0829600B5FA0B /* MainTabView.swift */; };
+		F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7945A7C27E083BB00B5FA0B /* Icon.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F749E06A27DF732400AD7A11 /* calistrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calistrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749E06D27DF732400AD7A11 /* calistrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calistrainerApp.swift; sourceTree = "<group>"; };
-		F749E06F27DF732400AD7A11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F749E07127DF732500AD7A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F749E06F27DF732400AD7A11 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F749E07127DF732500AD7A11 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		F749E07427DF732500AD7A11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F7945A6F27E073D800B5FA0B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		F7945A7327E076A000B5FA0B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		F7945A7627E07CB100B5FA0B /* PracticeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeItem.swift; sourceTree = "<group>"; };
+		F7945A7927E0829600B5FA0B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F7945A7C27E083BB00B5FA0B /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +61,11 @@
 		F749E06C27DF732400AD7A11 /* calistrainer */ = {
 			isa = PBXGroup;
 			children = (
+				F7945A7827E0828700B5FA0B /* TabBar */,
+				F7945A6C27E0734E00B5FA0B /* Common */,
+				F7945A6727E03A0A00B5FA0B /* Home */,
 				F749E06D27DF732400AD7A11 /* calistrainerApp.swift */,
-				F749E06F27DF732400AD7A11 /* ContentView.swift */,
-				F749E07127DF732500AD7A11 /* Assets.xcassets */,
+				F7945A7127E075EA00B5FA0B /* Supporting Files */,
 				F749E07327DF732500AD7A11 /* Preview Content */,
 			);
 			path = calistrainer;
@@ -65,6 +77,73 @@
 				F749E07427DF732500AD7A11 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F7945A6727E03A0A00B5FA0B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F749E06F27DF732400AD7A11 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F7945A6C27E0734E00B5FA0B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F7945A6D27E0739300B5FA0B /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F7945A6D27E0739300B5FA0B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F7945A7527E07C8400B5FA0B /* View */,
+				F7945A6E27E073BC00B5FA0B /* Button */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F7945A6E27E073BC00B5FA0B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F7945A6F27E073D800B5FA0B /* PrimaryButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		F7945A7127E075EA00B5FA0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7945A7227E0767700B5FA0B /* Assets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7945A7227E0767700B5FA0B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F749E07127DF732500AD7A11 /* Image.xcassets */,
+				F7945A7327E076A000B5FA0B /* Color.xcassets */,
+				F7945A7C27E083BB00B5FA0B /* Icon.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F7945A7527E07C8400B5FA0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7945A7627E07CB100B5FA0B /* PracticeItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F7945A7827E0828700B5FA0B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F7945A7927E0829600B5FA0B /* MainTabView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F749E07527DF732500AD7A11 /* Preview Assets.xcassets in Resources */,
-				F749E07227DF732500AD7A11 /* Assets.xcassets in Resources */,
+				F749E07227DF732500AD7A11 /* Image.xcassets in Resources */,
+				F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */,
+				F7945A7427E076A000B5FA0B /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F749E07027DF732400AD7A11 /* ContentView.swift in Sources */,
+				F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */,
+				F749E07027DF732400AD7A11 /* HomeView.swift in Sources */,
 				F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */,
+				F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */,
+				F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
