@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 	@State private var practiceIndex = 0
+	@State private var showPracticeView = false
 
 	var body: some View {
 		ZStack {
@@ -38,9 +39,16 @@ struct HomeView: View {
 				.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
 
 				PrimaryButton(label: "Start", fullWidth: true) {
-					// TODO: start practice
-				}.padding()
-				
+					showPracticeView = true
+				}
+				.padding()
+				.fullScreenCover(isPresented: $showPracticeView) {
+					PracticeView(
+						exercise: .squat,
+						viewModel: PracticeViewModel(exerciseTrackable: SquatsTrackable())
+					)
+				}
+
 				Spacer()
 			}
 		}

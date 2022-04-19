@@ -11,7 +11,7 @@ import Vision
 
 final class SquatsTrackable: ExerciseTrackable {
 
-	var moveCount = PassthroughSubject<Int, Never>()
+	var repetitionCount = 0
 	var currentExerciseStage: ExerciseStage = .neutral
 
 	private var holdTimer: Timer?
@@ -42,7 +42,8 @@ final class SquatsTrackable: ExerciseTrackable {
 		let angleDiffDegrees = Int(angleDiffRadians * 180 / .pi)
 		if angleDiffDegrees > 150 {
 			if currentExerciseStage == .returning {
-				moveCount.send(1)
+//				moveCount.send(1)
+				repetitionCount += 1
 			}
 			self.currentExerciseStage = .neutral
 		}

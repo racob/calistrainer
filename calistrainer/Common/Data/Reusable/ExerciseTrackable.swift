@@ -10,7 +10,7 @@ import Vision
 import Combine
 
 protocol ExerciseTrackable {
-	var moveCount: PassthroughSubject<Int, Never> { get }
+	var repetitionCount: Int { get }
 	func countRepetition(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint])
 	var currentExerciseStage: ExerciseStage { get }
 }

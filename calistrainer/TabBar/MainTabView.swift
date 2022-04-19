@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct MainTabView: View {
-    var body: some View {
+	var body: some View {
 		TabView {
 			HomeView()
 				.tabItem {
-					Label("Exercise Log", image: "Stretch")
+					Label("Practice", systemImage: "figure.walk")
 				}
 			Text("Exercise Log")
 				.tabItem {
 					Label("Exercise Log", image: "Calendar")
 				}
 		}
-    }
+	}
 }
 
 struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView()
-    }
+	static var previews: some View {
+		MainTabView()
+	}
 }

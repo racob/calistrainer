@@ -14,17 +14,18 @@ import Combine
 class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
 
 	@Published var bodyParts = [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]()
-	@Published var squatCount = 0
-	@Published var bodyInFrame = false
+//	var moveCount = 0
+	var bodyInFrame = false
 
 	let sequenceHandler = VNSequenceRequestHandler()
 	var subscriptions = Set<AnyCancellable>()
 	var initTimer: Timer? = nil
 	var bodyInFrameTimer = 0
 
-	let exerciseTrackable = SquatsTrackable()
+	let exerciseTrackable: ExerciseTrackable
 
-	override init() {
+	init(exerciseTrackable: ExerciseTrackable) {
+		self.exerciseTrackable = exerciseTrackable
 		super.init()
 		$bodyParts
 			.dropFirst()
@@ -77,9 +78,9 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			.sink(receiveValue: { bodyParts in self.exerciseTrackable.countRepetition(bodyParts: bodyParts)})
 			.store(in: &subscriptions)
 
-		self.exerciseTrackable.moveCount.sink { value in
-			self.squatCount += value
-		}.store(in: &subscriptions)
+//		self.exerciseTrackable.moveCount.sink { value in
+//			self.squatCount += value
+//		}.store(in: &subscriptions)
 	}
 
 }

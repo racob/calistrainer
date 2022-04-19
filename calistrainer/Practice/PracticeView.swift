@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PracticeView: View {
 
-	@StateObject var viewModel = PracticeViewModel()
+	let exercise: Exercise
+	@StateObject var viewModel: PracticeViewModel
 	@State private var animationAmount = 1.0
 
 	let audioManager = AudioManager()
@@ -65,12 +66,8 @@ struct PracticeView: View {
 					Text(viewModel.exerciseTrackable.currentExerciseStage.rawValue)
 					Text("Squat counter:")
 						.font(.title)
-					Text(String(viewModel.squatCount))
+					Text(String(viewModel.exerciseTrackable.repetitionCount))
 						.font(.title)
-//					Image(systemName: "exclamationmark.triangle.fill")
-//						.font(.largeTitle)
-//						.foregroundColor(Color.red)
-//						.opacity(viewModel.isGoodPosture ? 0.0 : 1.0)
 				} else {
 					Text("Stand in front of camera. \(viewModel.bodyInFrameTimer)")
 				}
