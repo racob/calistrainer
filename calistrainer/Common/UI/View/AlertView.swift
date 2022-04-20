@@ -54,6 +54,7 @@ struct AlertView: View {
 			.background {
 				RoundedRectangle(cornerRadius: 10)
 					.foregroundColor(Color("PrimaryGray"))
+					.opacity(0.75)
 					.frame(maxHeight: .infinity)
 			}
 			.frame(height: 170)

@@ -19,7 +19,7 @@ struct HomeView: View {
 					Text("Hello,")
 						.font(.title2)
 						.fontWeight(.bold)
-						.opacity(0.6)
+						.opacity(0.3)
 					Text("Eibiel Sardjanto")
 						.font(.title)
 						.fontWeight(.bold)
@@ -27,7 +27,6 @@ struct HomeView: View {
 					Text("Let's practice your calisthenics")
 						.fontWeight(.semibold)
 				}
-				.foregroundColor(.white)
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding()
 
