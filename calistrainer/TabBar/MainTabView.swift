@@ -16,7 +16,7 @@ struct MainTabView: View {
 				}
 			Text("Exercise Log")
 				.tabItem {
-					Label("Exercise Log", image: "Calendar")
+					Label("Exercise Log", systemImage: "heart.text.square.fill")
 				}
 		}
 	}
@@ -25,5 +25,6 @@ struct MainTabView: View {
 struct MainTabView_Previews: PreviewProvider {
 	static var previews: some View {
 		MainTabView()
+			.preferredColorScheme(.dark)
 	}
 }

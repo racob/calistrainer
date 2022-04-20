@@ -13,7 +13,7 @@ struct HomeView: View {
 
 	var body: some View {
 		ZStack {
-			Color("PrimaryBlue").ignoresSafeArea()
+			Color("PrimaryGray").ignoresSafeArea()
 			VStack {
 				VStack(alignment: .leading) {
 					Text("Hello,")
@@ -23,9 +23,11 @@ struct HomeView: View {
 					Text("Eibiel Sardjanto")
 						.font(.title)
 						.fontWeight(.bold)
+						.foregroundColor(.accentColor)
 					Text("Let's practice your calisthenics")
+						.fontWeight(.semibold)
 				}
-				.foregroundColor(Color("SecondaryBlue"))
+				.foregroundColor(.white)
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding()
 
@@ -33,7 +35,7 @@ struct HomeView: View {
 
 				TabView(selection: $practiceIndex) {
 					ForEach((0..<3), id: \.self) { index in
-						PracticeItem().padding()
+						PracticeItem()
 					}
 				}
 				.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
@@ -41,7 +43,7 @@ struct HomeView: View {
 				PrimaryButton(label: "Start", fullWidth: true) {
 					showPracticeView = true
 				}
-				.padding()
+				.padding([.horizontal, .bottom])
 				.fullScreenCover(isPresented: $showPracticeView) {
 					PracticeView(
 						exercise: .squat,
@@ -57,6 +59,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
-		HomeView()
+		HomeView().preferredColorScheme(.dark)
 	}
 }

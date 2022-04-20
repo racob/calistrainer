@@ -14,8 +14,12 @@ struct PracticeItem: View {
 			Image("Squat")
 				.resizable()
 				.scaledToFit()
+				.clipShape(RoundedRectangle(cornerRadius: 20))
+				.mask {
+					LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .center, endPoint: .bottom)
+				}
 
-			VStack {
+			VStack(spacing: 10) {
 				Text("The Squats")
 					.font(.title)
 					.fontWeight(.bold)

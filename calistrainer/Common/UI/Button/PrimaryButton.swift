@@ -17,14 +17,13 @@ struct PrimaryButton: View {
 			action()
 		} label: {
 			Text(label)
-				.foregroundColor(.white)
+				.foregroundColor(Color("PrimaryGray"))
 				.fontWeight(.semibold)
 				.padding()
 				.frame(maxWidth: fullWidth ? .infinity : nil)
 				.background(
 					RoundedRectangle(cornerRadius: 15)
-						.foregroundColor(Color("PrimaryOrange"))
-						.shadow(color: Color("SecondaryOrange"), radius: 1, x: 0, y: 3)
+						.foregroundColor(Color("PrimaryLime"))
 				)
 		}
     }
