@@ -26,8 +26,8 @@ struct StickFigureView: View {
 					size: size
 				)
 					.stroke(lineWidth: 5.0)
-					.fill(Color.green)
-
+					.fill(Color("PrimaryLime"))
+					.shadow(color: .black, radius: 3, x: 0, y: 0)
 				// Left leg
 				Stick(
 					points: [
@@ -39,8 +39,8 @@ struct StickFigureView: View {
 					size: size
 				)
 					.stroke(lineWidth: 5.0)
-					.fill(Color.green)
-
+					.fill(Color("PrimaryLime"))
+					.shadow(color: .black, radius: 3, x: 0, y: 0)
 				// Right arm
 				Stick(
 					points: [
@@ -52,8 +52,8 @@ struct StickFigureView: View {
 					size: size
 				)
 					.stroke(lineWidth: 5.0)
-					.fill(Color.green)
-
+					.fill(Color("PrimaryLime"))
+					.shadow(color: .black, radius: 3, x: 0, y: 0)
 				// Left arm
 				Stick(
 					points: [
@@ -65,19 +65,20 @@ struct StickFigureView: View {
 					size: size
 				)
 					.stroke(lineWidth: 5.0)
-					.fill(Color.green)
+					.fill(Color("PrimaryLime"))
+					.shadow(color: .black, radius: 3, x: 0, y: 0)
 
 				// Root to nose
 				Stick(
 					points: [
 						viewModel.bodyParts[.root]!.location,
-						viewModel.bodyParts[.neck]!.location,
-						viewModel.bodyParts[.nose]!.location
+						viewModel.bodyParts[.neck]!.location
 					],
 					size: size
 				)
 					.stroke(lineWidth: 5.0)
-					.fill(Color.green)
+					.fill(Color("PrimaryLime"))
+					.shadow(color: .black, radius: 3, x: 0, y: 0)
 			}
 		}
 	}

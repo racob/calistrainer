@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F731A0C7280FBF5100F1AC58 /* PracticeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C6280FBF5100F1AC58 /* PracticeButtons.swift */; };
+		F731A0CA28103F1800F1AC58 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C928103F1800F1AC58 /* AlertView.swift */; };
 		F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06D27DF732400AD7A11 /* calistrainerApp.swift */; };
 		F749E07027DF732400AD7A11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06F27DF732400AD7A11 /* HomeView.swift */; };
 		F749E07227DF732500AD7A11 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07127DF732500AD7A11 /* Image.xcassets */; };
@@ -37,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F731A0C6280FBF5100F1AC58 /* PracticeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeButtons.swift; sourceTree = "<group>"; };
+		F731A0C82810377E00F1AC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F731A0C928103F1800F1AC58 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		F749E06A27DF732400AD7A11 /* calistrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calistrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749E06D27DF732400AD7A11 /* calistrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calistrainerApp.swift; sourceTree = "<group>"; };
 		F749E06F27DF732400AD7A11 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		F749E06C27DF732400AD7A11 /* calistrainer */ = {
 			isa = PBXGroup;
 			children = (
+				F731A0C82810377E00F1AC58 /* Info.plist */,
 				F7945A6C27E0734E00B5FA0B /* Common */,
 				F7A942AE280D205C008D2EEF /* Practice */,
 				F7945A6727E03A0A00B5FA0B /* Home */,
@@ -178,6 +184,7 @@
 			children = (
 				F7945A7627E07CB100B5FA0B /* PracticeItem.swift */,
 				F7C56B68280D1EE3007B66BB /* StickFigureView.swift */,
+				F731A0C928103F1800F1AC58 /* AlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F7A942B6280D218E008D2EEF /* PracticeView.swift */,
+				F731A0C6280FBF5100F1AC58 /* PracticeButtons.swift */,
 				F7A942AF280D2094008D2EEF /* PracticeViewModel.swift */,
 				F7C56B6D280D1F37007B66BB /* Squat */,
 			);
@@ -360,6 +368,7 @@
 				F7A942B7280D218E008D2EEF /* PracticeView.swift in Sources */,
 				F7A942B0280D2094008D2EEF /* PracticeViewModel.swift in Sources */,
 				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
+				F731A0C7280FBF5100F1AC58 /* PracticeButtons.swift in Sources */,
 				F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */,
 				F749E07027DF732400AD7A11 /* HomeView.swift in Sources */,
 				F7C56B69280D1EE3007B66BB /* StickFigureView.swift in Sources */,
@@ -368,6 +377,7 @@
 				F7A4279F280E674F00C9ACF6 /* Exercise.swift in Sources */,
 				F7C56B6C280D1F18007B66BB /* Stick.swift in Sources */,
 				F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */,
+				F731A0CA28103F1800F1AC58 /* AlertView.swift in Sources */,
 				F7A942BE280D2231008D2EEF /* CameraViewWrapper.swift in Sources */,
 				F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */,
 				F7C56B67280D1EAC007B66BB /* CGPoint+Computation.swift in Sources */,
@@ -508,6 +518,7 @@
 				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = calistrainer/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "For human body tracking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -539,6 +550,7 @@
 				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = calistrainer/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "For human body tracking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
