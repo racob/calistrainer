@@ -24,15 +24,24 @@ struct PracticeView: View {
 				Color("PrimaryGray").ignoresSafeArea()
 				VStack {
 					HStack {
-						HStack {
-							Text("Reps: ")
-								.font(.title)
+						if viewModel.bodyInFrame {
+							HStack {
+								Text("Reps: ")
+									.font(.title)
+									.fontWeight(.semibold)
+								Text(String(viewModel.exerciseTrackable.repetitionCount))
+									.font(.title)
+									.fontWeight(.bold)
+							}
+							.foregroundColor(Color("PrimaryLime"))
+						} else {
+							Text("Make sure your whole body fits the frame")
+								.font(.title2)
 								.fontWeight(.semibold)
-							Text(String(viewModel.exerciseTrackable.repetitionCount))
-								.font(.title)
-								.fontWeight(.bold)
+								.foregroundColor(Color("PrimaryLime"))
+								.multilineTextAlignment(.leading)
+								.fixedSize(horizontal: false, vertical: true)
 						}
-						.foregroundColor(Color("PrimaryLime"))
 						Spacer()
 						Button {
 							withAnimation {
@@ -56,12 +65,21 @@ struct PracticeView: View {
 					}
 					.padding(.horizontal)
 					.padding(.vertical, 10)
-
-					GeometryReader { geo in
-						CameraViewWrapper(viewModel: viewModel)
-							.clipShape(RoundedRectangle(cornerRadius: 20))
-						StickFigureView(viewModel: viewModel, size: geo.size)
-					}.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width * 1920/1080, alignment: .bottom)
+					ZStack {
+						VStack {
+							Spacer()
+							ProgressView(
+								value: viewModel.bodyInFrame ? viewModel.progressValue : viewModel.bodyInFrameCount,
+								total: viewModel.bodyInFrame ? 1.0 : 4.0
+							)
+							.progressViewStyle(PracticeProgressViewStyle())
+						}.ignoresSafeArea()
+						GeometryReader { geo in
+							CameraViewWrapper(viewModel: viewModel)
+								.clipShape(RoundedRectangle(cornerRadius: 20))
+							StickFigureView(viewModel: viewModel, size: geo.size)
+						}.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width * 1920/1080, alignment: .bottom)
+					}
 				}
 			}
 			.blur(radius: isShowingMenu ? 30 : 0)
@@ -69,13 +87,14 @@ struct PracticeView: View {
 				AlertView(
 					title: "Are you done?",
 					leftButtonLabel: "Continue exercise",
-					rightButtonLabel: "Finish exercise") {
-						withAnimation {
-							isShowingMenu.toggle()
-						}
-					} rightButtonAction: {
-						self.presentationMode.wrappedValue.dismiss()
+					rightButtonLabel: "Finish exercise"
+				) {
+					withAnimation {
+						isShowingMenu.toggle()
 					}
+				} rightButtonAction: {
+					self.presentationMode.wrappedValue.dismiss()
+				}
 			}
 			//			VStack {
 			//				Spacer()

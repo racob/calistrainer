@@ -14,13 +14,14 @@ import Combine
 class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
 
 	@Published var bodyParts = [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]()
-//	var moveCount = 0
 	var bodyInFrame = false
 
 	let sequenceHandler = VNSequenceRequestHandler()
 	var subscriptions = Set<AnyCancellable>()
 	var initTimer: Timer? = nil
-	var bodyInFrameTimer = 0
+	var bodyInFrameCount = 0.0
+	var progressTimer: Timer? = nil
+	var progressValue = 0.0
 
 	let exerciseTrackable: ExerciseTrackable
 
@@ -55,17 +56,20 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 
 	func checkIfBodyInFrame(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
 		if bodyParts.count < 15 {
-			self.bodyInFrameTimer = 0
+			self.bodyInFrameCount = 0
 			self.initTimer?.invalidate()
+			self.initTimer = nil
 		} else {
-			if bodyInFrameTimer > 3 {
+			if bodyInFrameCount > 3 {
 				subscriptions.removeAll()
 				bodyInFrame = true
+				self.initTimer?.invalidate()
+				self.initTimer = nil
 				startMoveCount()
 			} else {
 				if self.initTimer == nil {
 					self.initTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
-						self.bodyInFrameTimer += 1
+						self.bodyInFrameCount += 1
 					})
 				}
 			}
@@ -75,12 +79,25 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 	func startMoveCount() {
 		$bodyParts
 			.dropFirst()
-			.sink(receiveValue: { bodyParts in self.exerciseTrackable.countRepetition(bodyParts: bodyParts)})
+			.sink(receiveValue: { bodyParts in
+				self.exerciseTrackable.countRepetition(bodyParts: bodyParts)
+				self.handleProgressView()
+			})
 			.store(in: &subscriptions)
+	}
 
-//		self.exerciseTrackable.moveCount.sink { value in
-//			self.squatCount += value
-//		}.store(in: &subscriptions)
+	func handleProgressView() {
+		if exerciseTrackable.currentExerciseStage == .contracting && progressTimer == nil {
+			progressTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { timer in
+				if self.progressValue < 1.0 {
+					self.progressValue += 0.1
+				}
+			})
+		} else if exerciseTrackable.currentExerciseStage == .neutral {
+			progressTimer?.invalidate()
+			progressTimer = nil
+			progressValue = 0
+		}
 	}
 
 }
