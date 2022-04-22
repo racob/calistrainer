@@ -13,6 +13,7 @@ final class SquatsTrackable: ExerciseTrackable {
 
 	var repetitionCount = 0
 	var currentExerciseStage: ExerciseStage = .neutral
+	var previousExerciseStage: ExerciseStage?
 
 	private var holdTimer: Timer?
 	private var holdCount = 0
@@ -42,9 +43,9 @@ final class SquatsTrackable: ExerciseTrackable {
 		let angleDiffDegrees = Int(angleDiffRadians * 180 / .pi)
 		if angleDiffDegrees > 150 {
 			if currentExerciseStage == .returning {
-//				moveCount.send(1)
 				repetitionCount += 1
 			}
+			self.previousExerciseStage = self.currentExerciseStage
 			self.currentExerciseStage = .neutral
 		}
 
@@ -53,6 +54,7 @@ final class SquatsTrackable: ExerciseTrackable {
 		let kneeHeight = rightKnee.y
 		if hipHeight < kneeHeight {
 			if self.currentExerciseStage == .neutral {
+				self.previousExerciseStage = self.currentExerciseStage
 				self.currentExerciseStage = .contracting
 			}
 			countHoldPosition()
@@ -72,6 +74,7 @@ final class SquatsTrackable: ExerciseTrackable {
 			}
 
 			if self.holdCount > 1 {
+				self.previousExerciseStage = self.currentExerciseStage
 				self.currentExerciseStage = .returning
 				self.holdCount = 0
 				timer.invalidate()

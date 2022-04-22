@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F731A0C7280FBF5100F1AC58 /* PracticeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C6280FBF5100F1AC58 /* PracticeButtons.swift */; };
+		F731A0C7280FBF5100F1AC58 /* TextBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C6280FBF5100F1AC58 /* TextBorder.swift */; };
 		F731A0CA28103F1800F1AC58 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C928103F1800F1AC58 /* AlertView.swift */; };
 		F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06D27DF732400AD7A11 /* calistrainerApp.swift */; };
 		F749E07027DF732400AD7A11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06F27DF732400AD7A11 /* HomeView.swift */; };
@@ -37,10 +37,14 @@
 		F7C56B69280D1EE3007B66BB /* StickFigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C56B68280D1EE3007B66BB /* StickFigureView.swift */; };
 		F7C56B6C280D1F18007B66BB /* Stick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C56B6B280D1F18007B66BB /* Stick.swift */; };
 		F7D9C44A281119DC000CECE9 /* PracticeProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9C449281119DC000CECE9 /* PracticeProgressViewStyle.swift */; };
+		F7D9C44D28126563000CECE9 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9C44C28126563000CECE9 /* ShakeEffect.swift */; };
+		F7D9C44F28126724000CECE9 /* PracticeInstructionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9C44E28126724000CECE9 /* PracticeInstructionTextView.swift */; };
+		F7D9C452281286E6000CECE9 /* countdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7D9C450281286E6000CECE9 /* countdown.wav */; };
+		F7D9C453281286E6000CECE9 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7D9C451281286E6000CECE9 /* start.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F731A0C6280FBF5100F1AC58 /* PracticeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeButtons.swift; sourceTree = "<group>"; };
+		F731A0C6280FBF5100F1AC58 /* TextBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBorder.swift; sourceTree = "<group>"; };
 		F731A0C82810377E00F1AC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F731A0C928103F1800F1AC58 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		F749E06A27DF732400AD7A11 /* calistrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calistrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,10 @@
 		F7C56B68280D1EE3007B66BB /* StickFigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickFigureView.swift; sourceTree = "<group>"; };
 		F7C56B6B280D1F18007B66BB /* Stick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stick.swift; sourceTree = "<group>"; };
 		F7D9C449281119DC000CECE9 /* PracticeProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProgressViewStyle.swift; sourceTree = "<group>"; };
+		F7D9C44C28126563000CECE9 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
+		F7D9C44E28126724000CECE9 /* PracticeInstructionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeInstructionTextView.swift; sourceTree = "<group>"; };
+		F7D9C450281286E6000CECE9 /* countdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdown.wav; sourceTree = "<group>"; };
+		F7D9C451281286E6000CECE9 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 		F7945A6D27E0739300B5FA0B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F7D9C44B28126557000CECE9 /* Animation */,
 				F7A942B8280D2205008D2EEF /* UIKit */,
 				F7C56B6A280D1F03007B66BB /* Shape */,
 				F7945A7527E07C8400B5FA0B /* View */,
@@ -188,6 +197,8 @@
 				F7C56B68280D1EE3007B66BB /* StickFigureView.swift */,
 				F731A0C928103F1800F1AC58 /* AlertView.swift */,
 				F7D9C449281119DC000CECE9 /* PracticeProgressViewStyle.swift */,
+				F731A0C6280FBF5100F1AC58 /* TextBorder.swift */,
+				F7D9C44E28126724000CECE9 /* PracticeInstructionTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				F7A942B6280D218E008D2EEF /* PracticeView.swift */,
-				F731A0C6280FBF5100F1AC58 /* PracticeButtons.swift */,
 				F7A942AF280D2094008D2EEF /* PracticeViewModel.swift */,
 				F7C56B6D280D1F37007B66BB /* Squat */,
 			);
@@ -259,6 +269,8 @@
 		F7C56B5C280D1E70007B66BB /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				F7D9C450281286E6000CECE9 /* countdown.wav */,
+				F7D9C451281286E6000CECE9 /* start.wav */,
 				F7C56B5D280D1E70007B66BB /* bell.wav */,
 				F7C56B5E280D1E70007B66BB /* fail.wav */,
 				F7C56B5F280D1E70007B66BB /* buildup.wav */,
@@ -289,6 +301,14 @@
 				F7A942AC280D2053008D2EEF /* SquatsTrackable.swift */,
 			);
 			path = Squat;
+			sourceTree = "<group>";
+		};
+		F7D9C44B28126557000CECE9 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F7D9C44C28126563000CECE9 /* ShakeEffect.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,7 +372,9 @@
 				F7C56B63280D1E70007B66BB /* buildup.wav in Resources */,
 				F7C56B62280D1E70007B66BB /* fail.wav in Resources */,
 				F7C56B61280D1E70007B66BB /* bell.wav in Resources */,
+				F7D9C453281286E6000CECE9 /* start.wav in Resources */,
 				F749E07527DF732500AD7A11 /* Preview Assets.xcassets in Resources */,
+				F7D9C452281286E6000CECE9 /* countdown.wav in Resources */,
 				F7C56B64280D1E70007B66BB /* slap.wav in Resources */,
 				F749E07227DF732500AD7A11 /* Image.xcassets in Resources */,
 				F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */,
@@ -372,11 +394,13 @@
 				F7A942B7280D218E008D2EEF /* PracticeView.swift in Sources */,
 				F7A942B0280D2094008D2EEF /* PracticeViewModel.swift in Sources */,
 				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
-				F731A0C7280FBF5100F1AC58 /* PracticeButtons.swift in Sources */,
+				F7D9C44D28126563000CECE9 /* ShakeEffect.swift in Sources */,
+				F731A0C7280FBF5100F1AC58 /* TextBorder.swift in Sources */,
 				F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */,
 				F749E07027DF732400AD7A11 /* HomeView.swift in Sources */,
 				F7C56B69280D1EE3007B66BB /* StickFigureView.swift in Sources */,
 				F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */,
+				F7D9C44F28126724000CECE9 /* PracticeInstructionTextView.swift in Sources */,
 				F7A942AB280D2014008D2EEF /* ExerciseStage.swift in Sources */,
 				F7A4279F280E674F00C9ACF6 /* Exercise.swift in Sources */,
 				F7C56B6C280D1F18007B66BB /* Stick.swift in Sources */,

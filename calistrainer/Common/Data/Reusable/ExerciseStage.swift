@@ -7,8 +7,27 @@
 
 import Foundation
 
-enum ExerciseStage: String {
-	case neutral = "neutral"
-	case contracting = "contracting"
-	case returning = "returning"
+enum ExerciseStage {
+	case neutral
+	case contracting
+	case returning
+}
+
+extension ExerciseStage {
+	static func promptString(exercise: Exercise, stage: ExerciseStage) -> String {
+		switch stage {
+		case .neutral:
+			switch exercise {
+			case .squat: return "LOWER"
+			}
+		case .contracting:
+			switch exercise {
+			case .squat: return "HOLD"
+			}
+		case .returning:
+			switch exercise {
+			case .squat: return "RETURN"
+			}
+		}
+	}
 }

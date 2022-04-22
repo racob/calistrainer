@@ -9,16 +9,16 @@ import SwiftUI
 
 struct PracticeView: View {
 	@Environment(\.presentationMode) var presentationMode
-
+	
 	let exercise: Exercise
 	@StateObject var viewModel: PracticeViewModel
 	@State private var animationAmount = 1.0
 	@State private var isShowingMenu = false
-
-	let audioManager = AudioManager()
-
+	
+	let audioManager = AudioManager.shared
+	
 	var body: some View {
-
+		
 		ZStack {
 			Group {
 				Color("PrimaryGray").ignoresSafeArea()
@@ -61,7 +61,7 @@ struct PracticeView: View {
 									.fill(Color("PrimaryLime"))
 							)
 						}
-
+						
 					}
 					.padding(.horizontal)
 					.padding(.vertical, 10)
@@ -70,15 +70,35 @@ struct PracticeView: View {
 							Spacer()
 							ProgressView(
 								value: viewModel.bodyInFrame ? viewModel.progressValue : viewModel.bodyInFrameCount,
-								total: viewModel.bodyInFrame ? 1.0 : 4.0
+								total: viewModel.bodyInFrame ? 2.0 : 3.0
 							)
 							.progressViewStyle(PracticeProgressViewStyle())
+							.onChange(of: viewModel.bodyInFrame) { _ in
+								audioManager.playSound(sound: "start", type: "wav")
+							}
+							.onChange(of: viewModel.bodyInFrameCount) { count in
+								if (1..<4).contains(count) {
+									audioManager.playSound(sound: "countdown", type: "wav")
+								}
+							}
 						}.ignoresSafeArea()
+						
 						GeometryReader { geo in
 							CameraViewWrapper(viewModel: viewModel)
 								.clipShape(RoundedRectangle(cornerRadius: 20))
 							StickFigureView(viewModel: viewModel, size: geo.size)
 						}.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width * 1920/1080, alignment: .bottom)
+						
+						VStack {
+							Spacer()
+							if viewModel.bodyInFrame {
+								PracticeInstructionTextView(
+									exercise: exercise,
+									stage: viewModel.exerciseTrackable.currentExerciseStage,
+									previousStage: viewModel.exerciseTrackable.previousExerciseStage
+								)
+							}
+						}.padding(.bottom, 30)
 					}
 				}
 			}
@@ -96,45 +116,7 @@ struct PracticeView: View {
 					self.presentationMode.wrappedValue.dismiss()
 				}
 			}
-			//			VStack {
-			//				Spacer()
-			//				switch viewModel.exerciseTrackable.currentExerciseStage {
-			//				case .neutral:
-			//					Text("LOWER")
-			//						.font(.title)
-			//						.fontWeight(.bold)
-			//						.foregroundColor(.orange)
-			//						.onAppear {
-			//							audioManager.playSound(sound: "fail", type: "wav")
-			//						}
-			//				case .contracting:
-			//					Text("HOLD")
-			//						.font(.title2)
-			//						.fontWeight(.bold)
-			//						.foregroundColor(.orange)
-			//						.scaleEffect(animationAmount)
-			//						.animation(.easeOut(duration: 2), value: animationAmount)
-			//						.onAppear {
-			//							animationAmount += 1
-			//							audioManager.playSound(sound: "buildup", type: "wav")
-			//						}
-			//						.onDisappear {
-			//							animationAmount -= 1
-			//						}
-			//				case .returning:
-			//					Text("RETURN")
-			//						.font(.title)
-			//						.fontWeight(.bold)
-			//						.foregroundColor(.orange)
-			//						.onAppear {
-			//							audioManager.playSound(sound: "bell", type: "wav")
-			//						}
-			//						.onDisappear {
-			//							audioManager.playSound(sound: "slap", type: "wav")
-			//						}
-			//				}
-			//			}
 		}
-
+		
 	}
 }

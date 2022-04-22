@@ -12,19 +12,19 @@ import Vision
 import Combine
 
 class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
-
+	
 	@Published var bodyParts = [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]()
 	var bodyInFrame = false
-
+	
 	let sequenceHandler = VNSequenceRequestHandler()
 	var subscriptions = Set<AnyCancellable>()
 	var initTimer: Timer? = nil
 	var bodyInFrameCount = 0.0
 	var progressTimer: Timer? = nil
 	var progressValue = 0.0
-
+	
 	let exerciseTrackable: ExerciseTrackable
-
+	
 	init(exerciseTrackable: ExerciseTrackable) {
 		self.exerciseTrackable = exerciseTrackable
 		super.init()
@@ -33,7 +33,7 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			.sink(receiveValue: { bodyParts in self.checkIfBodyInFrame(bodyParts: bodyParts)})
 			.store(in: &subscriptions)
 	}
-
+	
 	func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
 		let humanBodyRequest = VNDetectHumanBodyPoseRequest(completionHandler: detectedBodyPose)
 		do {
@@ -45,7 +45,7 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			print(error.localizedDescription)
 		}
 	}
-
+	
 	func detectedBodyPose(request: VNRequest, error: Error?) {
 		guard let bodyPoseResults = request.results as? [VNHumanBodyPoseObservation] else { return }
 		guard let bodyParts = try? bodyPoseResults.first?.recognizedPoints(.all) else { return }
@@ -53,9 +53,16 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			self.bodyParts = bodyParts
 		}
 	}
-
+	
 	func checkIfBodyInFrame(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
-		if bodyParts.count < 15 {
+		let requiredParts = [
+			bodyParts[.rightAnkle]?.location,
+			bodyParts[.leftAnkle]?.location,
+			bodyParts[.rightWrist]?.location,
+			bodyParts[.leftWrist]?.location,
+			bodyParts[.nose]?.location
+		]
+		if requiredParts.contains(CGPoint(x: 0.0, y: 1.0)) {
 			self.bodyInFrameCount = 0
 			self.initTimer?.invalidate()
 			self.initTimer = nil
@@ -75,7 +82,7 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			}
 		}
 	}
-
+	
 	func startMoveCount() {
 		$bodyParts
 			.dropFirst()
@@ -85,11 +92,11 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			})
 			.store(in: &subscriptions)
 	}
-
+	
 	func handleProgressView() {
 		if exerciseTrackable.currentExerciseStage == .contracting && progressTimer == nil {
 			progressTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { timer in
-				if self.progressValue < 1.0 {
+				if self.progressValue < 2.0 {
 					self.progressValue += 0.1
 				}
 			})
@@ -99,5 +106,5 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			progressValue = 0
 		}
 	}
-
+	
 }
