@@ -14,18 +14,21 @@ final class SquatsTrackable: ExerciseTrackable {
 	var repetitionCount = 0
 	var currentExerciseStage: ExerciseStage = .neutral
 	var previousExerciseStage: ExerciseStage?
+	var postureError = PostureError()
 
 	private var holdTimer: Timer?
 	private var holdCount = 0
 
-	private var feedbackTimer: Timer?
-	private var feedbackCounter = 0
+	private var loweringHipTimer: Timer?
+	private var loweringHipCounter = 0
 
 	let speechSynthesizer = SpeechSynthesizer()
 
 	func countRepetition(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
 
-		startFeedbackTimer(bodyParts: bodyParts)
+		self.assertFeetInlineWithFeet(bodyParts: bodyParts)
+		self.assertHorizontallyInlineShoulders(bodyParts: bodyParts)
+		self.assertThighsWithGroundParalellity(bodyParts: bodyParts)
 
 		// declare the needed body points
 		let rightKnee = bodyParts[.rightKnee]!.location
@@ -33,9 +36,10 @@ final class SquatsTrackable: ExerciseTrackable {
 		let rightAnkle = bodyParts[.rightAnkle]!.location
 
 		// calculate knees angles after standing from squat
-		let firstAngle = atan2(rightHip.y - rightKnee.y, rightHip.x - rightKnee.x)
-		let secondAngle = atan2(rightAnkle.y - rightKnee.y, rightAnkle.x - rightKnee.x)
+		let firstAngle = CGPoint.findAngle(from: rightKnee, to: rightHip)
+		let secondAngle = CGPoint.findAngle(from: rightKnee, to: rightAnkle)
 		var angleDiffRadians = firstAngle - secondAngle
+
 		while angleDiffRadians < 0 {
 			angleDiffRadians += CGFloat(2 * Double.pi)
 		}
@@ -83,37 +87,65 @@ final class SquatsTrackable: ExerciseTrackable {
 		})
 	}
 
-	func startFeedbackTimer(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
-		guard feedbackTimer == nil else { return }
-
-		feedbackTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
-			self.feedbackCounter += 1
-			if self.feedbackCounter > 4 {
-				self.feedbackCounter = 0
-				self.assertKneesForm(bodyParts: bodyParts)
-
-				timer.invalidate()
-				self.feedbackTimer = nil
-			}
-		})
-	}
-
-	private func assertKneesForm(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
+	private func assertFeetInlineWithFeet(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
 		guard currentExerciseStage == .neutral else { return }
 
+		let rightShoulder = bodyParts[.rightShoulder]!.location
+		let leftShoulder = bodyParts[.leftShoulder]!.location
+		let rightFeet = bodyParts[.rightAnkle]!.location
+		let leftFeet = bodyParts[.leftAnkle]!.location
+
+		if abs(rightShoulder.x - rightFeet.x) <= 0.11 && abs(leftShoulder.x - leftFeet.x) <= 0.11 {
+			print("################what#############")
+			postureError.lowerLegs = false
+		} else {
+			print("hmmm")
+			postureError.lowerLegs = true
+			speechSynthesizer.speak("Make sure your feet are inline with your shoulders")
+		}
+	}
+
+	private func assertHorizontallyInlineShoulders(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
+		let rightShoulder = bodyParts[.rightShoulder]!.location
+		let leftShoulder = bodyParts[.leftShoulder]!.location
+
+		if abs(CGPoint.findGradient(from: leftShoulder, to: rightShoulder)) > 0.05 {
+			postureError.shoulders = true
+			speechSynthesizer.speak("Make sure your shoulders are straight horizontally")
+		} else {
+			postureError.shoulders = false
+		}
+	}
+
+	private func assertThighsWithGroundParalellity(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
+
 		let rightKnee = bodyParts[.rightKnee]!.location
-		let leftKnee = bodyParts[.leftKnee]!.location
+		let rightHip = bodyParts[.rightHip]!.location
 		let rightAnkle = bodyParts[.rightAnkle]!.location
-		let leftAnkle = bodyParts[.leftAnkle]!.location
 
-		// detects good posture when knees are spread out further than the legs
-		let kneeDistance = rightKnee.distance(to: leftKnee)
-		let ankleDistance = rightAnkle.distance(to: leftAnkle)
+		let firstAngle = CGPoint.findAngle(from: rightKnee, to: rightHip)
+		let secondAngle = CGPoint.findAngle(from: rightKnee, to: rightAnkle)
+		var angleDiffRadians = firstAngle - secondAngle
+		while angleDiffRadians < 0 {
+			angleDiffRadians += CGFloat(2 * Double.pi)
+		}
 
-		print("knees = \(kneeDistance), ankles = \(ankleDistance)")
-		if ankleDistance > kneeDistance {
-			speechSynthesizer.speak("Make sure your knees are in outward direction")
+		let angleDiffDegrees = Int(angleDiffRadians * 180 / .pi)
+		if angleDiffDegrees < 150 && currentExerciseStage == .neutral {
+			guard loweringHipTimer == nil else { return }
+			loweringHipTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+				self.loweringHipCounter += 1
+				if self.loweringHipCounter > 2 {
+					self.postureError.upperLegs = true
+					self.speechSynthesizer.speak("Make sure your thighs are paralel to the ground while lowering your hips")
+					self.loweringHipCounter = 0
+				}
+			})
+		} else {
+			loweringHipTimer?.invalidate()
+			loweringHipTimer = nil
+			loweringHipCounter = 0
+			postureError.upperLegs = false
 		}
 	}
 }
-

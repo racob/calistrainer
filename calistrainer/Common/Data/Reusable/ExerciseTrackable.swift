@@ -14,4 +14,5 @@ protocol ExerciseTrackable {
 	func countRepetition(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint])
 	var currentExerciseStage: ExerciseStage { get }
 	var previousExerciseStage: ExerciseStage? { get }
+	var postureError: PostureError { get }
 }
