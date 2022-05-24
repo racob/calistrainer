@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F731A0C7280FBF5100F1AC58 /* TextBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C6280FBF5100F1AC58 /* TextBorder.swift */; };
 		F731A0CA28103F1800F1AC58 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731A0C928103F1800F1AC58 /* AlertView.swift */; };
+		F73EF772283D13EE00787535 /* PracticeSessionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F73EF770283D13EE00787535 /* PracticeSessionModel.xcdatamodeld */; };
+		F73EF778283D15C300787535 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EF777283D15C300787535 /* PersistenceManager.swift */; };
+		F73EF77D283D1D4300787535 /* ExerciseLogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EF77C283D1D4300787535 /* ExerciseLogsViewModel.swift */; };
+		F73EF77F283D1D5C00787535 /* ExerciseLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EF77E283D1D5C00787535 /* ExerciseLogsView.swift */; };
 		F749E06E27DF732400AD7A11 /* calistrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06D27DF732400AD7A11 /* calistrainerApp.swift */; };
 		F749E07027DF732400AD7A11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06F27DF732400AD7A11 /* HomeView.swift */; };
 		F749E07227DF732500AD7A11 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07127DF732500AD7A11 /* Image.xcassets */; };
@@ -48,6 +52,10 @@
 		F731A0C6280FBF5100F1AC58 /* TextBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBorder.swift; sourceTree = "<group>"; };
 		F731A0C82810377E00F1AC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F731A0C928103F1800F1AC58 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		F73EF771283D13EE00787535 /* PracticeSessionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PracticeSessionModel.xcdatamodel; sourceTree = "<group>"; };
+		F73EF777283D15C300787535 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		F73EF77C283D1D4300787535 /* ExerciseLogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLogsViewModel.swift; sourceTree = "<group>"; };
+		F73EF77E283D1D5C00787535 /* ExerciseLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLogsView.swift; sourceTree = "<group>"; };
 		F749E06A27DF732400AD7A11 /* calistrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calistrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749E06D27DF732400AD7A11 /* calistrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calistrainerApp.swift; sourceTree = "<group>"; };
 		F749E06F27DF732400AD7A11 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -95,6 +103,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F73EF773283D14A400787535 /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				F73EF774283D14E600787535 /* Model */,
+				F73EF777283D15C300787535 /* PersistenceManager.swift */,
+			);
+			path = Coredata;
+			sourceTree = "<group>";
+		};
+		F73EF774283D14E600787535 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F73EF770283D13EE00787535 /* PracticeSessionModel.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F73EF779283D1D1700787535 /* ExerciseLogs */ = {
+			isa = PBXGroup;
+			children = (
+				F73EF77C283D1D4300787535 /* ExerciseLogsViewModel.swift */,
+				F73EF77E283D1D5C00787535 /* ExerciseLogsView.swift */,
+			);
+			path = ExerciseLogs;
+			sourceTree = "<group>";
+		};
 		F749E06127DF732400AD7A11 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +152,7 @@
 				F7945A6C27E0734E00B5FA0B /* Common */,
 				F7A942AE280D205C008D2EEF /* Practice */,
 				F7945A6727E03A0A00B5FA0B /* Home */,
+				F73EF779283D1D1700787535 /* ExerciseLogs */,
 				F7945A7827E0828700B5FA0B /* TabBar */,
 				F749E06D27DF732400AD7A11 /* calistrainerApp.swift */,
 				F7945A7127E075EA00B5FA0B /* Supporting Files */,
@@ -216,6 +251,7 @@
 		F7A942A6280D1FB1008D2EEF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F73EF773283D14A400787535 /* Coredata */,
 				F7A942A7280D1FB5008D2EEF /* Reusable */,
 			);
 			path = Data;
@@ -393,8 +429,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7D9C44A281119DC000CECE9 /* PracticeProgressViewStyle.swift in Sources */,
+				F73EF77F283D1D5C00787535 /* ExerciseLogsView.swift in Sources */,
 				F7A942AD280D2053008D2EEF /* SquatsTrackable.swift in Sources */,
 				F7A942B7280D218E008D2EEF /* PracticeView.swift in Sources */,
+				F73EF77D283D1D4300787535 /* ExerciseLogsViewModel.swift in Sources */,
 				F7A942B0280D2094008D2EEF /* PracticeViewModel.swift in Sources */,
 				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
 				F7D9C44D28126563000CECE9 /* ShakeEffect.swift in Sources */,
@@ -407,8 +445,10 @@
 				F7A942AB280D2014008D2EEF /* ExerciseStage.swift in Sources */,
 				F7A4279F280E674F00C9ACF6 /* Exercise.swift in Sources */,
 				F7C56B6C280D1F18007B66BB /* Stick.swift in Sources */,
+				F73EF778283D15C300787535 /* PersistenceManager.swift in Sources */,
 				F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */,
 				F731A0CA28103F1800F1AC58 /* AlertView.swift in Sources */,
+				F73EF772283D13EE00787535 /* PracticeSessionModel.xcdatamodeld in Sources */,
 				F7A942BE280D2231008D2EEF /* CameraViewWrapper.swift in Sources */,
 				F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */,
 				F7C56B67280D1EAC007B66BB /* CGPoint+Computation.swift in Sources */,
@@ -625,6 +665,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F73EF770283D13EE00787535 /* PracticeSessionModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F73EF771283D13EE00787535 /* PracticeSessionModel.xcdatamodel */,
+			);
+			currentVersion = F73EF771283D13EE00787535 /* PracticeSessionModel.xcdatamodel */;
+			path = PracticeSessionModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F749E06227DF732400AD7A11 /* Project object */;
 }

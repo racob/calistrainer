@@ -113,6 +113,7 @@ struct PracticeView: View {
 						isShowingMenu.toggle()
 					}
 				} rightButtonAction: {
+					viewModel.savePracticeData(exercise: exercise)
 					self.presentationMode.wrappedValue.dismiss()
 				}
 			}

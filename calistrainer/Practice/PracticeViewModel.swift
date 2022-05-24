@@ -10,8 +10,9 @@ import Foundation
 import AVFoundation
 import Vision
 import Combine
+import CoreData
 
-class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
+final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
 	
 	@Published var bodyParts = [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]()
 	var bodyInFrame = false
@@ -22,8 +23,11 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 	var bodyInFrameCount = 0.0
 	var progressTimer: Timer? = nil
 	var progressValue = 0.0
-	
+
+	var practiceStartDate: Date?
+
 	let exerciseTrackable: ExerciseTrackable
+	let persistenceManager = PersistenceManager.shared
 	
 	init(exerciseTrackable: ExerciseTrackable) {
 		self.exerciseTrackable = exerciseTrackable
@@ -73,6 +77,7 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 				self.initTimer?.invalidate()
 				self.initTimer = nil
 				startMoveCount()
+				self.practiceStartDate = Date()
 			} else {
 				if self.initTimer == nil {
 					self.initTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
@@ -104,6 +109,23 @@ class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate,
 			progressTimer?.invalidate()
 			progressTimer = nil
 			progressValue = 0
+		}
+	}
+
+	func savePracticeData(exercise: Exercise) {
+		let managedContext = persistenceManager.persistentContainer.viewContext
+		let entity = NSEntityDescription.entity(forEntityName: "PracticeSession", in: managedContext)!
+		let practiceSession = NSManagedObject(entity: entity, insertInto: managedContext)
+
+		practiceSession.setValue(exercise.rawValue, forKey: "exercise")
+		practiceSession.setValue(Int16(exerciseTrackable.repetitionCount), forKey: "repetitionCount")
+		practiceSession.setValue(Date(), forKey: "date")
+		practiceSession.setValue(Int64(practiceStartDate!.timeIntervalSinceNow), forKey: "durationInSecond")
+
+		do {
+			try managedContext.save()
+		} catch let error as NSError {
+			print("Could not save. \(error), \(error.userInfo)")
 		}
 	}
 	

@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Exercise {
-	case squat
+enum Exercise: String {
+	case squat = "Squat"
 }

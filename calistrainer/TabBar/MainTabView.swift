@@ -14,7 +14,7 @@ struct MainTabView: View {
 				.tabItem {
 					Label("Practice", systemImage: "figure.walk")
 				}
-			Text("Exercise Log")
+			ExerciseLogsView()
 				.tabItem {
 					Label("Exercise Log", systemImage: "heart.text.square.fill")
 				}

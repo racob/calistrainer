@@ -96,10 +96,8 @@ final class SquatsTrackable: ExerciseTrackable {
 		let leftFeet = bodyParts[.leftAnkle]!.location
 
 		if abs(rightShoulder.x - rightFeet.x) <= 0.11 && abs(leftShoulder.x - leftFeet.x) <= 0.11 {
-			print("################what#############")
 			postureError.lowerLegs = false
 		} else {
-			print("hmmm")
 			postureError.lowerLegs = true
 			speechSynthesizer.speak("Make sure your feet are inline with your shoulders")
 		}
