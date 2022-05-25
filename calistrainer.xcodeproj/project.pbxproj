@@ -17,6 +17,9 @@
 		F749E07027DF732400AD7A11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749E06F27DF732400AD7A11 /* HomeView.swift */; };
 		F749E07227DF732500AD7A11 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07127DF732500AD7A11 /* Image.xcassets */; };
 		F749E07527DF732500AD7A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F749E07427DF732500AD7A11 /* Preview Assets.xcassets */; };
+		F7567236283DC940008507CA /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7567235283DC93F008507CA /* DateButton.swift */; };
+		F7567238283DD11C008507CA /* ExerciseLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7567237283DD11C008507CA /* ExerciseLogItem.swift */; };
+		F756723A283DD2C2008507CA /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7567239283DD2C2008507CA /* LogItem.swift */; };
 		F76791062838DF8700ED6B02 /* PostureError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76791052838DF8700ED6B02 /* PostureError.swift */; };
 		F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A6F27E073D800B5FA0B /* PrimaryButton.swift */; };
 		F7945A7427E076A000B5FA0B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7945A7327E076A000B5FA0B /* Color.xcassets */; };
@@ -61,6 +64,9 @@
 		F749E06F27DF732400AD7A11 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F749E07127DF732500AD7A11 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		F749E07427DF732500AD7A11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F7567235283DC93F008507CA /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
+		F7567237283DD11C008507CA /* ExerciseLogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLogItem.swift; sourceTree = "<group>"; };
+		F7567239283DD2C2008507CA /* LogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
 		F76791052838DF8700ED6B02 /* PostureError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureError.swift; sourceTree = "<group>"; };
 		F7945A6F27E073D800B5FA0B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F7945A7327E076A000B5FA0B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -236,6 +242,8 @@
 				F7D9C449281119DC000CECE9 /* PracticeProgressViewStyle.swift */,
 				F731A0C6280FBF5100F1AC58 /* TextBorder.swift */,
 				F7D9C44E28126724000CECE9 /* PracticeInstructionTextView.swift */,
+				F7567235283DC93F008507CA /* DateButton.swift */,
+				F7567237283DD11C008507CA /* ExerciseLogItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				F7A942AA280D2014008D2EEF /* ExerciseStage.swift */,
 				F7A4279E280E674F00C9ACF6 /* Exercise.swift */,
 				F76791052838DF8700ED6B02 /* PostureError.swift */,
+				F7567239283DD2C2008507CA /* LogItem.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -434,6 +443,7 @@
 				F7A942B7280D218E008D2EEF /* PracticeView.swift in Sources */,
 				F73EF77D283D1D4300787535 /* ExerciseLogsViewModel.swift in Sources */,
 				F7A942B0280D2094008D2EEF /* PracticeViewModel.swift in Sources */,
+				F7567238283DD11C008507CA /* ExerciseLogItem.swift in Sources */,
 				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
 				F7D9C44D28126563000CECE9 /* ShakeEffect.swift in Sources */,
 				F731A0C7280FBF5100F1AC58 /* TextBorder.swift in Sources */,
@@ -452,11 +462,13 @@
 				F7A942BE280D2231008D2EEF /* CameraViewWrapper.swift in Sources */,
 				F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */,
 				F7C56B67280D1EAC007B66BB /* CGPoint+Computation.swift in Sources */,
+				F756723A283DD2C2008507CA /* LogItem.swift in Sources */,
 				F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */,
 				F7A942B5280D2116008D2EEF /* SpeechSynthesizer.swift in Sources */,
 				F7A942B3280D20F9008D2EEF /* AudioManager.swift in Sources */,
 				F76791062838DF8700ED6B02 /* PostureError.swift in Sources */,
 				F7A942BA280D2217008D2EEF /* CameraView.swift in Sources */,
+				F7567236283DC940008507CA /* DateButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
