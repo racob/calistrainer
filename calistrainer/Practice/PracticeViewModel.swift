@@ -120,7 +120,7 @@ final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
 		practiceSession.setValue(exercise.rawValue, forKey: "exercise")
 		practiceSession.setValue(Int16(exerciseTrackable.repetitionCount), forKey: "repetitionCount")
 		practiceSession.setValue(Date(), forKey: "date")
-		practiceSession.setValue(Int64(practiceStartDate!.timeIntervalSinceNow), forKey: "durationInSecond")
+		practiceSession.setValue(Int64(abs(practiceStartDate!.timeIntervalSinceNow)), forKey: "durationInSecond")
 
 		do {
 			try managedContext.save()
