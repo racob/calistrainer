@@ -8,5 +8,5 @@
 import Foundation
 
 enum Exercise: String {
-	case squat = "Squat"
+	case squat = "The Squats"
 }
