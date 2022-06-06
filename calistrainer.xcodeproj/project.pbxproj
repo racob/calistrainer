@@ -28,6 +28,8 @@
 		F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7627E07CB100B5FA0B /* PracticeItem.swift */; };
 		F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7927E0829600B5FA0B /* MainTabView.swift */; };
 		F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7945A7C27E083BB00B5FA0B /* Icon.xcassets */; };
+		F798C738284DB4C20072A8CF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798C737284DB4C20072A8CF /* OnboardingView.swift */; };
+		F798C73C284DC4730072A8CF /* Launchscreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F798C73B284DC4730072A8CF /* Launchscreen.storyboard */; };
 		F7A4279F280E674F00C9ACF6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4279E280E674F00C9ACF6 /* Exercise.swift */; };
 		F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */; };
 		F7A942AB280D2014008D2EEF /* ExerciseStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942AA280D2014008D2EEF /* ExerciseStage.swift */; };
@@ -80,6 +82,8 @@
 		F7945A7627E07CB100B5FA0B /* PracticeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeItem.swift; sourceTree = "<group>"; };
 		F7945A7927E0829600B5FA0B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F7945A7C27E083BB00B5FA0B /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		F798C737284DB4C20072A8CF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F798C73B284DC4730072A8CF /* Launchscreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launchscreen.storyboard; sourceTree = "<group>"; };
 		F7A4279E280E674F00C9ACF6 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTrackable.swift; sourceTree = "<group>"; };
 		F7A942AA280D2014008D2EEF /* ExerciseStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStage.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				F7945A6727E03A0A00B5FA0B /* Home */,
 				F73EF779283D1D1700787535 /* ExerciseLogs */,
 				F7945A7827E0828700B5FA0B /* TabBar */,
+				F798C73A284DC4520072A8CF /* Launchscreen */,
 				F749E06D27DF732400AD7A11 /* calistrainerApp.swift */,
 				F7945A7127E075EA00B5FA0B /* Supporting Files */,
 				F749E07327DF732500AD7A11 /* Preview Content */,
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				F749E06F27DF732400AD7A11 /* HomeView.swift */,
+				F798C737284DB4C20072A8CF /* OnboardingView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -272,6 +278,14 @@
 				F7945A7927E0829600B5FA0B /* MainTabView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F798C73A284DC4520072A8CF /* Launchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				F798C73B284DC4730072A8CF /* Launchscreen.storyboard */,
+			);
+			path = Launchscreen;
 			sourceTree = "<group>";
 		};
 		F7A942A6280D1FB1008D2EEF /* Data */ = {
@@ -450,6 +464,7 @@
 				F749E07227DF732500AD7A11 /* Image.xcassets in Resources */,
 				F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */,
 				F7945A7427E076A000B5FA0B /* Color.xcassets in Resources */,
+				F798C73C284DC4730072A8CF /* Launchscreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +486,7 @@
 				F7567238283DD11C008507CA /* ExerciseLogItem.swift in Sources */,
 				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
 				F7D9C44D28126563000CECE9 /* ShakeEffect.swift in Sources */,
+				F798C738284DB4C20072A8CF /* OnboardingView.swift in Sources */,
 				F731A0C7280FBF5100F1AC58 /* TextBorder.swift in Sources */,
 				F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */,
 				F749E07027DF732400AD7A11 /* HomeView.swift in Sources */,
@@ -632,9 +648,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calistrainer/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "For human body tracking";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Launchscreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -664,9 +680,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calistrainer/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "For human body tracking";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Launchscreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
