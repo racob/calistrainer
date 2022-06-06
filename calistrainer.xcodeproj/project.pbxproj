@@ -28,6 +28,7 @@
 		F7945A7727E07CB100B5FA0B /* PracticeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7627E07CB100B5FA0B /* PracticeItem.swift */; };
 		F7945A7A27E0829600B5FA0B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945A7927E0829600B5FA0B /* MainTabView.swift */; };
 		F7945A7D27E083BB00B5FA0B /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7945A7C27E083BB00B5FA0B /* Icon.xcassets */; };
+		F798C738284DB4C20072A8CF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798C737284DB4C20072A8CF /* OnboardingView.swift */; };
 		F7A4279F280E674F00C9ACF6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4279E280E674F00C9ACF6 /* Exercise.swift */; };
 		F7A942A9280D1FDE008D2EEF /* ExerciseTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */; };
 		F7A942AB280D2014008D2EEF /* ExerciseStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A942AA280D2014008D2EEF /* ExerciseStage.swift */; };
@@ -80,6 +81,7 @@
 		F7945A7627E07CB100B5FA0B /* PracticeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeItem.swift; sourceTree = "<group>"; };
 		F7945A7927E0829600B5FA0B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F7945A7C27E083BB00B5FA0B /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		F798C737284DB4C20072A8CF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F7A4279E280E674F00C9ACF6 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		F7A942A8280D1FDE008D2EEF /* ExerciseTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTrackable.swift; sourceTree = "<group>"; };
 		F7A942AA280D2014008D2EEF /* ExerciseStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStage.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				F749E06F27DF732400AD7A11 /* HomeView.swift */,
+				F798C737284DB4C20072A8CF /* OnboardingView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				F7567238283DD11C008507CA /* ExerciseLogItem.swift in Sources */,
 				F7A942BC280D2224008D2EEF /* CameraViewController.swift in Sources */,
 				F7D9C44D28126563000CECE9 /* ShakeEffect.swift in Sources */,
+				F798C738284DB4C20072A8CF /* OnboardingView.swift in Sources */,
 				F731A0C7280FBF5100F1AC58 /* TextBorder.swift in Sources */,
 				F7945A7027E073D800B5FA0B /* PrimaryButton.swift in Sources */,
 				F749E07027DF732400AD7A11 /* HomeView.swift in Sources */,

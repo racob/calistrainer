@@ -13,7 +13,7 @@ struct HomeView: View {
 	@State private var selectedPractice: HomeExerciseItem
 	@State private var showPracticePreparationView = false
 	@State private var username: String = ""
-	@State private var showUsernameAlert = false
+	@State private var showOnboarding = false
 
 	private let userDefaults = UserDefaults.standard
 	
@@ -47,7 +47,7 @@ struct HomeView: View {
 						.font(.title2)
 						.fontWeight(.bold)
 						.opacity(0.3)
-					Text("Eibiel Sardjanto")
+					Text(username)
 						.font(.title)
 						.fontWeight(.bold)
 						.foregroundColor(.accentColor)
@@ -57,7 +57,7 @@ struct HomeView: View {
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding()
 				.onTapGesture {
-					showUsernameAlert = true
+					showOnboarding = true
 				}
 				
 				Spacer()
@@ -88,20 +88,17 @@ struct HomeView: View {
 				Spacer()
 			}
 		}
+		.fullScreenCover(isPresented: $showOnboarding, onDismiss: {
+			username = userDefaults.string(forKey: "username") ?? ""
+		}, content: {
+			OnboardingView(isShowingOnboarding: $showOnboarding)
+		})
 		.onAppear {
-			getUsername()
+			username = userDefaults.string(forKey: "username") ?? ""
+			if username.isEmpty {
+				showOnboarding = true
+			}
 		}
-	}
-}
-
-extension HomeView {
-
-	func getUsername() {
-		username = userDefaults.string(forKey: "username") ?? "NaN"
-	}
-
-	func saveUsername() {
-		userDefaults.set(username, forKey: "username")
 	}
 }
 

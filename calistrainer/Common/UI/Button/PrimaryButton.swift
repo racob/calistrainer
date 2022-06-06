@@ -10,27 +10,38 @@ import SwiftUI
 struct PrimaryButton: View {
 	let label: String
 	var fullWidth: Bool = false
+	var disabled: Bool = false
 	let action: () -> Void
+
 
     var body: some View {
 		Button {
 			action()
 		} label: {
 			Text(label)
-				.foregroundColor(Color("PrimaryGray"))
+				.foregroundColor(
+					disabled
+					? Color("PrimaryGray")
+					: Color("PrimaryGray")
+				)
 				.fontWeight(.semibold)
 				.padding()
 				.frame(maxWidth: fullWidth ? .infinity : nil)
 				.background(
 					RoundedRectangle(cornerRadius: 15)
-						.foregroundColor(Color("PrimaryLime"))
+						.foregroundColor(
+							disabled
+							? Color("SecondaryGray")
+							: Color("PrimaryLime")
+						)
 				)
 		}
+		.disabled(disabled)
     }
 }
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-		PrimaryButton(label: "Start", action: {})
+		PrimaryButton(label: "Start", disabled: true, action: {})
     }
 }
