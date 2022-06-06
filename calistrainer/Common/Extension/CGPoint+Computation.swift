@@ -10,10 +10,6 @@ import UIKit
 
 extension CGPoint {
 
-	func distance(to point: CGPoint) -> CGFloat {
-		return sqrt(pow(x - point.x, 2) + pow(y - point.y, 2))
-	}
-
 	static func findDistance(from pointA: CGPoint, to pointB: CGPoint) -> CGFloat {
 		return sqrt(pow(pointA.x - pointB.x, 2) + pow(pointA.y - pointB.y, 2))
 	}

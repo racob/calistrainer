@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct PracticeItem: View {
+
+	let exerciseItem: HomeExerciseItem
+
     var body: some View {
 		VStack {
 			Spacer()
-			Image("Squat")
+			Image(exerciseItem.image)
 				.resizable()
 				.scaledToFit()
 				.clipShape(RoundedRectangle(cornerRadius: 20))
@@ -20,10 +23,10 @@ struct PracticeItem: View {
 				}
 
 			VStack(spacing: 10) {
-				Text("The Squats")
+				Text(exerciseItem.exercise.rawValue)
 					.font(.title)
 					.fontWeight(.bold)
-				Text("Train your legs")
+				Text(exerciseItem.description)
 			}.padding()
 			Spacer()
 			
@@ -33,6 +36,11 @@ struct PracticeItem: View {
 
 struct PracticeItem_Previews: PreviewProvider {
     static var previews: some View {
-        PracticeItem()
+        PracticeItem(exerciseItem: HomeExerciseItem(
+			exercise: .squat,
+			description: "Train your legs",
+			image: "Squat",
+			isSideFacing: false
+		))
     }
 }

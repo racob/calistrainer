@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Pushup.jpg",
+      "filename" : "FrontCamera.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "FrontCamera@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "FrontCamera@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
