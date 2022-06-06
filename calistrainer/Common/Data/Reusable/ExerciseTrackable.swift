@@ -11,8 +11,9 @@ import Combine
 
 protocol ExerciseTrackable {
 	var repetitionCount: Int { get }
-	func countRepetition(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint])
 	var currentExerciseStage: ExerciseStage { get }
 	var previousExerciseStage: ExerciseStage? { get }
 	var postureError: PostureError { get }
+	var cameraPerspective: CameraPerspective? { get set }
+	func countRepetition(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint])
 }

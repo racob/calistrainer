@@ -9,4 +9,5 @@ import Foundation
 
 enum Exercise: String {
 	case squat = "The Squats"
+	case pushup = "The Pushups"
 }

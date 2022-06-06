@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Vision
 
 enum ExerciseStage {
 	case neutral
@@ -18,15 +19,18 @@ extension ExerciseStage {
 		switch stage {
 		case .neutral:
 			switch exercise {
-			case .squat: return "LOWER"
+			case .squat: fallthrough
+			case .pushup: return "LOWER"
 			}
 		case .contracting:
 			switch exercise {
-			case .squat: return "HOLD"
+			case .squat: fallthrough
+			case .pushup: return "HOLD"
 			}
 		case .returning:
 			switch exercise {
 			case .squat: return "RETURN"
+			case .pushup: return "RAISE"
 			}
 		}
 	}

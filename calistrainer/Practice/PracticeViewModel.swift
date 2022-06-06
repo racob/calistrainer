@@ -26,11 +26,15 @@ final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
 
 	var practiceStartDate: Date?
 
+	let exercise: Exercise
 	let exerciseTrackable: ExerciseTrackable
+	let cameraPerspective: CameraPerspective
 	let persistenceManager = PersistenceManager.shared
 	
-	init(exerciseTrackable: ExerciseTrackable) {
-		self.exerciseTrackable = exerciseTrackable
+	init(exercise: Exercise, cameraPerspective: CameraPerspective = .front) {
+		self.exercise = exercise
+		self.cameraPerspective = cameraPerspective
+		self.exerciseTrackable = PracticeViewModel.initExerciseTrackable(for: exercise, camera: cameraPerspective)
 		super.init()
 		$bodyParts
 			.dropFirst()
@@ -44,7 +48,8 @@ final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
 			try sequenceHandler.perform(
 				[humanBodyRequest],
 				on: sampleBuffer,
-				orientation: .right)
+				orientation: .right
+			)
 		} catch {
 			print(error.localizedDescription)
 		}
@@ -59,13 +64,30 @@ final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
 	}
 	
 	func checkIfBodyInFrame(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
-		let requiredParts = [
-			bodyParts[.rightAnkle]?.location,
-			bodyParts[.leftAnkle]?.location,
-			bodyParts[.rightWrist]?.location,
-			bodyParts[.leftWrist]?.location,
-			bodyParts[.nose]?.location
-		]
+		var requiredParts: [CGPoint?] {
+			switch cameraPerspective {
+			case .front:
+				return [
+					bodyParts[.rightAnkle]?.location,
+					bodyParts[.leftAnkle]?.location,
+					bodyParts[.rightWrist]?.location,
+					bodyParts[.leftWrist]?.location,
+					bodyParts[.nose]?.location
+				]
+			case .left:
+				return [
+					bodyParts[.rightAnkle]?.location,
+					bodyParts[.rightWrist]?.location,
+					bodyParts[.nose]?.location
+				]
+			case .right:
+				return [
+					bodyParts[.leftAnkle]?.location,
+					bodyParts[.leftWrist]?.location,
+					bodyParts[.nose]?.location
+				]
+			}
+		}
 		if requiredParts.contains(CGPoint(x: 0.0, y: 1.0)) {
 			self.bodyInFrameCount = 0
 			self.initTimer?.invalidate()
@@ -113,6 +135,7 @@ final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
 	}
 
 	func savePracticeData(exercise: Exercise) {
+		guard exerciseTrackable.repetitionCount > 0 else { return }
 		let managedContext = persistenceManager.persistentContainer.viewContext
 		let entity = NSEntityDescription.entity(forEntityName: "PracticeSession", in: managedContext)!
 		let practiceSession = NSManagedObject(entity: entity, insertInto: managedContext)
@@ -129,4 +152,19 @@ final class PracticeViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
 		}
 	}
 	
+}
+
+extension PracticeViewModel {
+
+	static func initExerciseTrackable(for exercise: Exercise, camera cameraPerspective: CameraPerspective) -> ExerciseTrackable {
+		switch exercise {
+		case .squat:
+			return SquatsTrackable()
+		case .pushup:
+			let exerciseTrackable = PushupTrackable()
+			exerciseTrackable.cameraPerspective = cameraPerspective
+			return exerciseTrackable
+		}
+	}
+
 }

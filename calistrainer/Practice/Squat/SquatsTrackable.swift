@@ -15,6 +15,7 @@ final class SquatsTrackable: ExerciseTrackable {
 	var currentExerciseStage: ExerciseStage = .neutral
 	var previousExerciseStage: ExerciseStage?
 	var postureError = PostureError()
+	var cameraPerspective: CameraPerspective?
 
 	private var holdTimer: Timer?
 	private var holdCount = 0
@@ -68,7 +69,7 @@ final class SquatsTrackable: ExerciseTrackable {
 
 	func countHoldPosition() {
 		guard holdTimer == nil else { return }
-		holdTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
+		holdTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
 			if self.currentExerciseStage == .contracting {
 				self.holdCount += 1
 			} else {
@@ -84,7 +85,7 @@ final class SquatsTrackable: ExerciseTrackable {
 				timer.invalidate()
 				self.holdTimer = nil
 			}
-		})
+		}
 	}
 
 	private func assertFeetInlineWithFeet(bodyParts: [VNHumanBodyPoseObservation.JointName : VNRecognizedPoint]) {
