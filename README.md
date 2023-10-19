@@ -28,14 +28,13 @@
 </div>
 
 
-
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <a href="https://github.com/racob/calistrainer">
-    <img src="public/assets/images/logo.png" alt="Calistrainer Logo" width="80" height="80">
+    <img src="public/assets/images/logo.png" alt="Calistrainer Logo">
   </a>
-  
+  <br />
+
 ![Static Badge](https://img.shields.io/badge/Swift-5-orange?logo=swift)
 ![Static Badge](https://img.shields.io/badge/SwiftUI-3.0-blue?logo=swift&logoColor=blue)
 ![Static Badge](https://img.shields.io/badge/Swift_Vision-grey?logo=swift)
@@ -63,9 +62,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
