@@ -33,6 +33,8 @@
   <a href="https://github.com/racob/calistrainer">
     <img src="public/assets/images/logo.png" alt="Calistrainer Logo" width="200" height="200">
   </a>
+
+  <br />
   <br />
 
 ![Static Badge](https://img.shields.io/badge/Swift-5-orange?logo=swift)
@@ -154,6 +156,12 @@ To get a local copy up and running follow these simple example steps:
 - You can also choose which way you're facing when practicing movements in horizontal orientation
 
 ### Practice Screen
+
+| The Squats | The Push-ups |
+| --- | --- |
+| ![](public/assets/gifs/squats.gif) | ![](public/assets/gifs/pushups.gif) |
+
+
 - Make sure your whole body fits the frame
 - Start exercising, while the app makes sure you practice the correct posture and tempo
 - When you're finished, tap the **Finish** button
