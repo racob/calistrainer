@@ -31,7 +31,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/racob/calistrainer">
-    <img src="public/assets/images/logo.png" alt="Calistrainer Logo">
+    <img src="public/assets/images/logo.png" alt="Calistrainer Logo" width="200" height="200">
   </a>
   <br />
 
